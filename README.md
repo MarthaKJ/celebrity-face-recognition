@@ -24,7 +24,7 @@ The full dataset of celebrity images is hosted on Kaggle: Celebrity Face Recogni
 Note: Please use the dataset for educational and research purposes only.
 
 ## Dataset Structure
-/data
+``` /data
    /identity_1
        img1.jpg
        img2.jpg
@@ -33,17 +33,18 @@ Note: Please use the dataset for educational and research purposes only.
        img1.jpg
        img2.jpg
        ...
+```
 
 ## Installation
 
 Clone the repository:
 
-git clone https://github.com/USERNAME/celebrity-face-recognition.git
+``` git clone https://github.com/USERNAME/celebrity-face-recognition.git ```
 
 
 ## Install dependencies:
 
-pip install -r requirements.txt
+``` pip install -r requirements.txt ```
 
 
 Set up dataset folders according to the structure above.
@@ -53,17 +54,17 @@ Set up dataset folders according to the structure above.
 
 Preprocess images using the provided preprocessing scripts:
 
-python preprocess.py --dataset /path/to/data
+``` python preprocess.py --dataset /path/to/data ```
 
 
 Train the model using ArcFace:
 
-python train.py --dataset /path/to/data
+``` python train.py --dataset /path/to/data ```
 
 
 Evaluate the model on test images:
 
-python evaluate.py --model /path/to/model
+``` python evaluate.py --model /path/to/model ```
 
 ## Contributing
 
@@ -72,4 +73,5 @@ Contributions are welcome! Please open an issue or submit a pull request.
 License
 
 MIT License
+
 
