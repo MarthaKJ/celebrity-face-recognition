@@ -1,0 +1,41 @@
+version: "3"
+ 
+services:
+  insightface-server:
+    container_name: insightface-container
+    image: insightface-image
+    runtime: nvidia
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        USERNAME: ${USERNAME:-devuser}
+        USER_UID: ${UID:-1001}
+        USER_GID: ${GID:-1001}
+    shm_size: '8gb'
+    working_dir: /workspace
+    tty: true
+    volumes:
+      - .:/workspace
+      - /mnt/st1:/workspace/datasets
+
+ 
+    ports:
+      - "8050"
+    environment:
+        ENV: "dev"
+        TZ: "Africa/Nairobi"
+        LC_ALL: C.UTF-8
+        LANG: C.UTF-8
+        DEVICE: "gpu"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['0','1','2','3','4','5','6','7']  # Updated for 8 GPUs
+              capabilities: [gpu]
+    command: bash
+    #command: bash -c "export CUDA_VISIBLE_DEVICES=0 && uvicorn src.main:app --host 0.0.0.0 --port 8050 --reload"
+volumes:
+  uv-cache:
