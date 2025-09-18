@@ -39,7 +39,7 @@ Note: Please use the dataset for educational and research purposes only.
 
 Clone the repository:
 
-``` git clone https://github.com/USERNAME/celebrity-face-recognition.git ```
+``` git clone https://github.com/MarthaKJ/celebrity-face-recognition.git ```
 
 
 ## Install dependencies:
@@ -73,5 +73,6 @@ Contributions are welcome! Please open an issue or submit a pull request.
 License
 
 MIT License
+
 
 
